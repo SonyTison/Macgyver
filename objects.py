@@ -19,6 +19,7 @@ class Object:
         self.object_position = []
         self.object_position_list = []
         self.object_collected = False
+        self.case_x_obj = 0
         
      
     def set_objet_position(self):       
@@ -36,8 +37,15 @@ class Object:
                     self.object_position_list.append(self.object_position)
                     launched = False
 
-    def pick_up_object(self):       
+    def pick_up_object(self, obj_pos):       
         """ Pick up an object by moving it out of the maze """
-        self.case_y = 0
-        self.case_x = 1 * SPRITE_SIZE
-        self.object_collected = True
+        i = self.object_position_list.index(obj_pos)
+        self.object_position_list[i][1] = 0
+        self.object_position_list[i][1] = self.case_x_obj
+        self.case_x_obj += 1
+
+    def set_all_object_position(self):
+
+        """ """
+        for i in range(3):
+            self.set_objet_position()
