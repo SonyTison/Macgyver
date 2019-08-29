@@ -1,3 +1,5 @@
+""" This module manage all the constants used in the Game """
+
 #coding:utf-8
 
 import pygame as pg
@@ -10,22 +12,29 @@ SPRITE_SIDE_NUMBER = 15
 SPRITE_SIZE = 40
 WINDOW_SIDE = SPRITE_SIDE_NUMBER * SPRITE_SIZE
 
-pg.display.set_caption("Mac Giver") 
 
-window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE)) 
-
-""" WINDOW of WINNER """
-
-
+window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
+icone = pg.image.load("./resources/icon.png")
+pg.display.set_icon(icone)
+pg.display.set_caption("MacGyver")
 
 
+""" WELCOME_SCREEN """
+
+window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
+WELCOME_SCREEN = pg.image.load("./resources/welcome_pic.png")
 
 
+""" WINNER_SCREEN """
 
-""" WINDOW of LOOSER """
+window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
+WINNER_SCREEN = pg.image.load("./resources/win_pic.png")
 
 
+""" LOOSER_SCREEN """
 
+window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
+LOSER_SCREEN = pg.image.load("./resources/lose_pic.png")
 
 
 """ SPRITES """
@@ -37,7 +46,7 @@ GOAL_CHART = pg.image.load("./resources/start_finished.png").convert()
 MACGYVER_CHART = pg.image.load("./resources/macgyver.png").convert_alpha()
 GARDIAN_CHART = pg.image.load("./resources/gardian.png").convert_alpha()
 SYRINGE_NEEDLE_CHART = pg.image.load("./resources/syringe_needle.png").convert()
-ETHER_CHART = pg.image.load("./resources/ether.png").convert_alpha()
+ETHER_CHART = pg.image.load("./resources/ether.png").convert()
 SYRINGE_CHART = pg.image.load("./resources/syringe.png").convert()
 PLASTIC_TUBE_CHART = pg.image.load("./resources/plastic_tube.png").convert()
 

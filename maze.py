@@ -1,11 +1,15 @@
+""" This module manage the creation, loading and the printing of the map for the Game"""
+
 #coding:utf-8
 import  pygame as pg
-from macgiver import *
+from macgyver import *
 from settings import *
 
 pg.init() 
 
 class Map:
+
+    """ Definition and initialization of the map """
 
     def __init__(self, filename):
         self.filename = filename
