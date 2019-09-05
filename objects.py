@@ -1,4 +1,4 @@
-""" This module manage the creation of the object, their position on the map and their capability to be pick up by Macgiver """
+""" This module manages the creation of an object, its position on the map and the ability to be picked up by Macgyver """
 
 #coding:utf-8
 import pygame as pg
@@ -18,11 +18,10 @@ class Object:
         self.my_map = my_map
         self.object_position = []
         self.object_position_list = []
-        self.object_collected = False
         self.case_x_obj = 0
         
-     
-    def set_objet_position(self):       
+
+    def set_object_position(self):       
         """ Definition of a valid position for an object on the map """
         launched = True
         while launched:
@@ -37,15 +36,14 @@ class Object:
                     self.object_position_list.append(self.object_position)
                     launched = False
 
+    def set_all_object_position(self):
+        """ Position all objects """
+        for i in range(3):
+            self.set_object_position()
+
     def pick_up_object(self, obj_pos):       
         """ Pick up an object by moving it out of the maze """
         i = self.object_position_list.index(obj_pos)
-        self.object_position_list[i][1] = 0
+        self.object_position_list[i][0] = 0
         self.object_position_list[i][1] = self.case_x_obj
         self.case_x_obj += 1
-
-    def set_all_object_position(self):
-
-        """ """
-        for i in range(3):
-            self.set_objet_position()

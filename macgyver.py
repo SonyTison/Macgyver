@@ -1,4 +1,4 @@
-""" This module manage the creation of the main caracter, his position on the map and their capability to be pick up an object """
+""" This module manages the creation of the main character, his position on the map and his ability to pick up an object """
 
 #coding:utf-8
 from pygame import *
@@ -17,7 +17,7 @@ class MacGyver:
         self.quit = False
         
     def event_management(self):
-        """ Management of Macgyver position on the map """
+        """ Management of Macgyver's position on the map """
         for event in pg.event.get():
             
             if event.type == QUIT:

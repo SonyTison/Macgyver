@@ -1,4 +1,4 @@
-""" This module manage the creation, loading and the printing of the map for the Game"""
+""" This module manages the creation, loading and printing of the map for the Game """
 
 #coding:utf-8
 import  pygame as pg
@@ -8,18 +8,14 @@ from settings import *
 pg.init() 
 
 class Map:
-
     """ Definition and initialization of the map """
-
     def __init__(self, filename):
         self.filename = filename
         self.my_map = []
     
 
     def load_file(self):
-
-        """ Load the map from text  """
-
+        """ Load map from text """
         with open(self.filename) as file:
             for line in file:
                 map_line = []
@@ -30,9 +26,7 @@ class Map:
 
 
     def print_map(self): 
-
-        """ Print the map with pygame"""
-
+        """ Print map with pygame """
         x = 0
         y = 0
         for line in self.my_map:
