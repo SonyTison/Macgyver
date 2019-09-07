@@ -1,9 +1,7 @@
 """ This module manages all the constants used in the Game """
 
 #coding:utf-8
-
 import pygame as pg
-
 pg.init()
 
 """ WINDOW PARAMETERS """
@@ -21,19 +19,16 @@ pg.display.set_caption("MacGyver")
 
 """ WELCOME_SCREEN """
 
-window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
 WELCOME_SCREEN = pg.image.load("./resources/welcome_pic.png")
 
 
 """ WINNER_SCREEN """
 
-window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
 WINNER_SCREEN = pg.image.load("./resources/win_pic.png")
 
 
 """ LOSER_SCREEN """
 
-window_surface = pg.display.set_mode((WINDOW_SIDE, WINDOW_SIDE))
 LOSER_SCREEN = pg.image.load("./resources/lose_pic.png")
 
 

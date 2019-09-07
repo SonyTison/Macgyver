@@ -1,4 +1,4 @@
-""" This module manage the different step of the game """
+""" This module manage the different steps of the game """
 
 #coding:utf-8
 import pygame as pg
@@ -11,6 +11,7 @@ from objects import *
 pg.init()
 
 class Game:
+    """ Definition and initialization of the game """
     def __init__(self):
         self.welcome = True
         self.launched = True
@@ -18,16 +19,36 @@ class Game:
         self.victory = True
 
     def intro(self):
+        """ Welcome screen management """
         while self.welcome:
             window_surface.blit(WELCOME_SCREEN, (0,0))
             pg.display.flip()
             for event in pg.event.get():
                 if event.type == KEYDOWN and event.key == K_RETURN:
                     self.welcome = False
-'''
-    def start(self):
+                if (event.type == KEYDOWN and event.key == K_ESCAPE) or event.type == QUIT:
+                    self.welcome = False
+                    self.launched = False
+                    self.running = False
 
-        self.launched = True
+    def victory_management(self, victory_screen):
+        """ WIN/LOSE screen management """
+        self.victory = True
+        while self.victory:
+            window_surface.blit(victory_screen, (0,0))
+            pg.display.flip()
+            for event in pg.event.get():
+                if event.type == KEYDOWN and event.key == K_RETURN:
+                    self.victory = False
+                    self.start()
+                if (event.type == KEYDOWN and event.key == K_ESCAPE) or event.type == QUIT:
+                    self.victory = False
+                    self.launched = False
+        self.running = False
+
+    def start(self):
+        """ Main loop of the game """
+        self.intro()
         while self.launched:
             map = Map("./resources/map_structure.txt")
             map.load_file()
@@ -49,36 +70,10 @@ class Game:
                 if macgyver.quit:
                     self.running = False
                     self.launched = False
-
                 if [macgyver.x, macgyver.y] in objs.object_position_list:
-                    objs.pick_up_object([macgyver.x, macgyver.y])
-                
+                    objs.pick_up_object([macgyver.x, macgyver.y])    
                 if [macgyver.x, macgyver.y] == [guardian.x, guardian.y]:
                     if objs.case_x_obj == 3:
-                        while self.victory:
-                            window_surface.blit(WINNER_SCREEN, (0,0))
-                            pg.display.flip()
-                            for event in pg.event.get():
-                                if event.type == QUIT:
-                                    self.launched = False
-                                    self.victory = False
-                                if event.type == KEYDOWN and event.key == K_ESCAPE:
-                                    self.launched = False
-                                    self.victory = False
-                                if event.type == KEYDOWN and event.key == K_RETURN:
-                                    self.victory = False
-                        self.running = False
+                        self.victory_management(WINNER_SCREEN)
                     else:
-                        while self.victory:
-                            window_surface.blit(LOSER_SCREEN, (0,0))
-                            pg.display.flip()
-                            for event in pg.event.get():
-                                if event.type == QUIT:
-                                    self.launched = False
-                                    self.victory = False
-                                if event.type == KEYDOWN and event.key == K_ESCAPE:
-                                    self.launched = False
-                                    self.victory = False
-                                if event.type == KEYDOWN and event.key == K_RETURN:
-                                    self.victory = False
-                        self.running = False '''
+                        self.victory_management(LOSER_SCREEN)

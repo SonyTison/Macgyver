@@ -15,8 +15,3 @@ class Guardian:
         self.case_x = x * SPRITE_SIZE
         self.case_y = y * SPRITE_SIZE
         self.my_map = my_map
-
-    '''def print_guardian(self):
-        """ Print guardian at goal position on the map. """
-        window_surface.blit(GUARDIAN_CHART, [self.case_x, self.case_y])
-        pg.display.flip()'''

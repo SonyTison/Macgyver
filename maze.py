@@ -4,7 +4,6 @@
 import  pygame as pg
 from macgyver import *
 from settings import *
-
 pg.init() 
 
 class Map:
@@ -12,7 +11,6 @@ class Map:
     def __init__(self, filename):
         self.filename = filename
         self.my_map = []
-    
 
     def load_file(self):
         """ Load map from text """
@@ -23,7 +21,6 @@ class Map:
                     if char != '\n':
                         map_line.append(char)
                 self.my_map.append(map_line)
-
 
     def print_map(self): 
         """ Print map with pygame """

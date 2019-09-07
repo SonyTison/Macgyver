@@ -20,7 +20,6 @@ class Object:
         self.object_position_list = []
         self.case_x_obj = 0
         
-
     def set_object_position(self):       
         """ Definition of a valid position for an object on the map """
         launched = True
@@ -28,7 +27,6 @@ class Object:
             self.x = random.randint(0, SPRITE_SIDE_NUMBER-1)
             self.y = random.randint(0, SPRITE_SIDE_NUMBER-1)
             self.object_position = [self.x, self.y]
-
             if (self.my_map[self.y][self.x] != WALL_CHAR) and (self.my_map[self.y][self.x] != START_CHAR) and (self.my_map[self.y][self.x] != GOAL_CHAR):
                 if self.object_position not in self.object_position_list:
                     self.case_y = self.y * SPRITE_SIZE
