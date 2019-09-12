@@ -1,6 +1,7 @@
+#coding: UTF-8
+
 """ This module manages the creation of an object, its position on the map and the ability to be picked up by Macgyver """
 
-#coding:utf-8
 import pygame as pg
 from maze import *
 import random

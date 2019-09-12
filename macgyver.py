@@ -1,6 +1,7 @@
+#coding: UTF-8
+
 """ This module manages the creation of the main character, his position on the map and his ability to pick up an object """
 
-#coding:utf-8
 from pygame import *
 from maze import *
 from settings import *

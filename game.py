@@ -1,6 +1,7 @@
+#coding: UTF-8
+
 """ This module manage the different steps of the game """
 
-#coding:utf-8
 import pygame as pg
 from maze import *
 from macgyver import *
