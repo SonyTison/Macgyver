@@ -1,15 +1,14 @@
-#coding: UTF-8
+# coding: utf-8
 
 """ This module manages the creation of the main character, his position on the map and his ability to pick up an object """
 
 from pygame import *
-from maze import *
 from settings import *
 pg.init()
 
 class MacGyver:
     """ Definition and initialization of Macgyver on the map """
-    def __init__(self, x, y, my_map): 
+    def __init__(self, x, y, my_map):
         self.x = x
         self.y = y
         self.case_x = x * SPRITE_SIZE
@@ -19,7 +18,7 @@ class MacGyver:
 
     def event_management(self):
         """ Management of Macgyver's position on the map """
-        for event in pg.event.get():       
+        for event in pg.event.get():
             if event.type == QUIT:
                 self.quit = True
             if event.type == KEYDOWN and event.key == K_DOWN:

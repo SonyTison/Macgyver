@@ -1,11 +1,8 @@
+# coding: utf-8
+
 """ This module manages the creation of the guardian and his position on the map """
 
-#coding:utf-8
-import pygame as pg
-from maze import *
 from settings import *
-
-pg.init()
 
 class Guardian:
     """ Definition and initialization of the guardian on the map """

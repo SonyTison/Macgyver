@@ -1,6 +1,7 @@
+# coding: utf-8
+
 """ This module manages all the constants used in the Game """
 
-#coding:utf-8
 import pygame as pg
 pg.init()
 
@@ -40,10 +41,10 @@ START_CHART = pg.image.load("./resources/start_finished.png").convert()
 GOAL_CHART = pg.image.load("./resources/start_finished.png").convert()
 MACGYVER_CHART = pg.image.load("./resources/macgyver.png").convert_alpha()
 GUARDIAN_CHART = pg.image.load("./resources/guardian.png").convert_alpha()
-SYRINGE_NEEDLE_CHART = pg.image.load("./resources/syringe_needle.png").convert()
-ETHER_CHART = pg.image.load("./resources/ether.png").convert()
-SYRINGE_CHART = pg.image.load("./resources/syringe.png").convert()
-PLASTIC_TUBE_CHART = pg.image.load("./resources/plastic_tube.png").convert()
+SYRINGE_NEEDLE_CHART = pg.image.load("./resources/syringe_needle.png").convert_alpha()
+ETHER_CHART = pg.image.load("./resources/ether.png").convert_alpha()
+SYRINGE_CHART = pg.image.load("./resources/syringe.png").convert_alpha()
+PLASTIC_TUBE_CHART = pg.image.load("./resources/plastic_tube.png").convert_alpha()
 
 
 """ MAP STRUCTURE """
